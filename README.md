@@ -7,5 +7,5 @@
 * ACM ICPC
 * LeetCode
 
-contact: <gardenia@ewhain.net>
+contact: <garden1117244@gmail.com>
 
