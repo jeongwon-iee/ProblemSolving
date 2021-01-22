@@ -16,9 +16,9 @@ class Solution {
             }
             char c = s.charAt(i);
             if(Character.isUpperCase(c)) {
-                answer.append(upperAlphabet[(c-65+n)%26]);
+                answer.append(upperAlphabet[(c-'A'+n)%26]);
             } else if(Character.isLowerCase(c)) {
-                answer.append(lowerAlphabet[(c-97+n)%26]);
+                answer.append(lowerAlphabet[(c-'a'+n)%26]);
             }
         }
         return answer.toString();
