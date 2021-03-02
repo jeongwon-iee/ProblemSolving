@@ -22,3 +22,4 @@ public class Main {
         return Math.min(totalAvailableDays, vacation);
     }
 }
+ 
