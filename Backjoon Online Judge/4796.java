@@ -21,5 +21,5 @@ public class Main {
         totalAvailableDays += Math.min((vacation % totalDays), campAvailable);
         return Math.min(totalAvailableDays, vacation);
     }
-}
+} 
  
