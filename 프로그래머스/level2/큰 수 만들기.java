@@ -1,24 +1,22 @@
 import java.util.*;
 class Solution {
-    static int totalDigit;
-    List<String> list = new ArrayList<>();
     public String solution(String number, int k) {
-        totalDigit = number.length()-k;
         StringBuilder subNum = new StringBuilder();
-        createSubNumber(subNum, number, 0);
-        Collections.sort(list);
-        return list.get(list.size()-1);
-    }
-    
-    void createSubNumber(StringBuilder subNum, String number, int index) {
-        if(subNum.length() == totalDigit) {
-            list.add(subNum.toString());
-            return;
+        int totalLength = number.length()-k;
+        int start = 0;
+        int end = number.length()-totalLength;
+        while(subNum.length() < totalLength) {
+            int MAX = Integer.MIN_VALUE;
+            for(int i=start; i<=end; i++) {
+                int n = number.charAt(i)-'0';
+                if(MAX < n) {
+                    MAX = n;
+                    start = i+1;
+                }
+            }
+            subNum.append(MAX);
+            end++;
         }
-        for(int i=index; i<number.length(); i++) {
-            subNum.append(number.charAt(i));
-            createSubNumber(subNum, number, i+1);
-            subNum.deleteCharAt(subNum.length()-1);
-        }
+        return subNum.toString();
     }
 }
